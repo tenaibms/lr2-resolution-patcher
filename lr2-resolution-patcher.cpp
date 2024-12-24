@@ -52,7 +52,9 @@ int main(int argc, char* argv[])
 	}
 
 	/* patch float offsets*/
+	printf("%f -> %f\n", *(double*)(buf + offsets.width_float), (double)width);
 	*(double*)(buf + offsets.width_float) = (double)width;
+	printf("%f -> %f\n", *(double*)(buf + offsets.height_float), (double)height);
 	*(double*)(buf + offsets.height_float) = (double)height;
 
 	printf("Patched!\n");
